@@ -2,14 +2,27 @@
 Changelog for package genpy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.4.17 (2014-06-02)
--------------------
-* make TVal more similar to generated messages for introspection (`ros/std_msgs#6 <https://github.com/ros/std_msgs/issues/6>`_)
-* resolve message classes from dry packages (`ros/ros_comm#293 <https://github.com/ros/ros_comm/issues/293>`_, `#28 <https://github.com/ros/genpy/issues/28>`_)
+0.5.4 (2014-12-22)
+------------------
+* add support for fixed-width floating-point and integer array values (`ros/ros_comm#400 <https://github.com/ros/ros_comm/issues/400>`_)
+* add missing test dependency on yaml
 
-0.4.16 (2014-02-25)
--------------------
-* revert "python 3 compatibility" (introduced in 0.4.15)
+0.5.3 (2014-06-02)
+------------------
+* make TVal more similar to generated messages for introspection (`ros/std_msgs#6 <https://github.com/ros/std_msgs/issues/6>`_)
+
+0.5.2 (2014-05-08)
+------------------
+* fix usage of load_manifest() introduced in 0.5.1 (`#28 <https://github.com/ros/genpy/issues/28>`_)
+
+0.5.1 (2014-05-07)
+------------------
+* resolve message classes from dry packages (`ros/ros_comm#293 <https://github.com/ros/ros_comm/issues/293>`_)
+* add architecture_independent flag in package.xml (`#27 <https://github.com/ros/genpy/issues/27>`_)
+
+0.5.0 (2014-02-25)
+------------------
+* use catkin_install_python() to install Python scripts (`#25 <https://github.com/ros/genpy/issues/25>`_)
 
 0.4.15 (2014-01-07)
 -------------------
