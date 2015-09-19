@@ -1,0 +1,82 @@
+ros-jade-genpy (0.5.5-0trusty) trusty; urgency=high
+
+  * fix handling of dynamic message classes with the same name (#37 <https://github.com/ros/genpy/issues/37>)
+  * fix Duration.abs() when sec is zero (#35 <https://github.com/ros/genpy/issues/35>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Sat, 19 Sep 2015 07:00:00 -0000
+
+ros-jade-genpy (0.5.4-0trusty) trusty; urgency=high
+
+  * add support for fixed-width floating-point and integer array values (ros/ros_comm#400 <https://github.com/ros/ros_comm/issues/400>)
+  * add missing test dependency on yaml
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Mon, 22 Dec 2014 08:00:00 -0000
+
+ros-jade-genpy (0.5.3-0trusty) trusty; urgency=high
+
+  * make TVal more similar to generated messages for introspection (ros/std_msgs#6 <https://github.com/ros/std_msgs/issues/6>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Mon, 02 Jun 2014 07:00:00 -0000
+
+ros-jade-genpy (0.5.2-0trusty) trusty; urgency=high
+
+  * fix usage of load_manifest() introduced in 0.5.1 (#28 <https://github.com/ros/genpy/issues/28>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 08 May 2014 07:00:00 -0000
+
+ros-jade-genpy (0.5.1-0trusty) trusty; urgency=high
+
+  * resolve message classes from dry packages (ros/ros_comm#293 <https://github.com/ros/ros_comm/issues/293>)
+  * add architecture_independent flag in package.xml (#27 <https://github.com/ros/genpy/issues/27>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 07 May 2014 07:00:00 -0000
+
+ros-jade-genpy (0.5.0-0trusty) trusty; urgency=high
+
+  * use catkin_install_python() to install Python scripts (#25 <https://github.com/ros/genpy/issues/25>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 25 Feb 2014 08:00:00 -0000
+
+ros-jade-genpy (0.4.15-0trusty) trusty; urgency=high
+
+  * python 3 compatibility (#22 <https://github.com/ros/genpy/issues/22>)
+  * use PYTHON_EXECUTABLE when invoking scripts for better Windows support (#23 <https://github.com/ros/genpy/issues/23>)
+  * improve exception message when message type does not match (#21 <https://github.com/ros/genpy/issues/21>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 07 Jan 2014 08:00:00 -0000
+
+ros-jade-genpy (0.4.14-0trusty) trusty; urgency=high
+
+  * make genpy relocatable (ros/catkin#490 <https://github.com/ros/catkin/issues/490>)
+  * enable int/long values for list of time/duration (#13 <https://github.com/ros/genpy/issues/13>)
+  * fix issue with time/duration message fields (without std_msgs prefix) when used as array (ros/ros_comm#252 <https://github.com/ros/ros_comm/issues/252>)
+  * fix Time() for seconds being of type long on 32-bit systems (fix #15 <https://github.com/ros/genpy/issues/15>)
+  * fix passing keys to _fill_message_args (#20 <https://github.com/ros/genpy/issues/20>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 21 Aug 2013 07:00:00 -0000
+
+ros-jade-genpy (0.4.13-0trusty) trusty; urgency=high
+
+  * check for CATKIN_ENABLE_TESTING to enable configure without tests
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 03 Jul 2013 07:00:00 -0000
+
+ros-jade-genpy (0.4.12-0trusty) trusty; urgency=high
+
+  * fix deserialize bytes in Python3 (#10 <https://github.com/ros/genpy/issues/10>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 18 Jun 2013 07:00:00 -0000
+
+ros-jade-genpy (0.4.11-0trusty) trusty; urgency=high
+
+  * fix handling spaces in folder names (ros/catkin#375 <https://github.com/ros/catkin/issues/375>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 08 Mar 2013 08:00:00 -0000
+
+ros-jade-genpy (0.4.10-0trusty) trusty; urgency=high
+
+  * first public release for Groovy
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 21 Dec 2012 08:00:00 -0000
+
+
