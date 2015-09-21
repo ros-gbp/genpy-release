@@ -1,3 +1,24 @@
+## genpy (indigo) - 0.5.5-0
+
+The packages in the `genpy` repository were released into the `indigo` distro by running `/usr/bin/bloom-release -r indigo -t indigo genpy` on `Mon, 21 Sep 2015 01:24:30 -0000`
+
+The `genpy` package was released.
+
+Version of package(s) in repository `genpy`:
+- upstream repository: git@github.com:ros/genpy.git
+- release repository: https://github.com/ros-gbp/genpy-release.git
+- rosdistro version: `0.5.4-0`
+- old version: `0.5.4-0`
+- new version: `0.5.5-0`
+
+Versions of tools used:
+- bloom version: `0.5.20`
+- catkin_pkg version: `0.2.10`
+- rosdep version: `0.11.2`
+- rosdistro version: `0.4.2`
+- vcstools version: `0.1.37`
+
+
 ## genpy (jade) - 0.5.5-0
 
 The packages in the `genpy` repository were released into the `jade` distro by running `/usr/bin/bloom-release -r jade -t jade genpy` on `Sat, 19 Sep 2015 20:29:02 -0000`
