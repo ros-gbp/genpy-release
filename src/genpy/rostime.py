@@ -35,6 +35,7 @@ ROS Time representation, including Duration
 """
 
 import sys
+import warnings
 
 if sys.version > '3': 
     long = int
@@ -390,41 +391,58 @@ class Duration(TVal):
     def __floordiv__(self, val):
         """
         Floor divide this duration by an integer or float
-        :param val: division factor, ``int/float``
-        :returns: :class:`Duration` divided by val
+        :param val: division factor ``int/float``, or :class:`Duration` to divide by
+        :returns: :class:`Duration` divided by val - a :class:`Duration` if divided by a number, or a number if divided by a duration
         """
         t = type(val)
         if t in (int, long):
+            warnings.warn(
+                'The Duration.__floordiv__(integer) function is ill-defined. '
+                'The floor operation is applied independently on the seconds as well as the nanoseconds. '
+                'For rounding down to the nearest second use a float divisor. '
+                'For true division use the operator `/` (which requires `from __future__ import division` in Python 2) or `operator.truediv` instead.',
+                category=RuntimeWarning)
             return Duration(self.secs // val, self.nsecs // val)
         elif t == float:
             return Duration.from_sec(self.to_sec() // val)
+        elif isinstance(val, Duration):
+            return self.to_sec() // val.to_sec()
         else:
             return NotImplemented
 
     def __div__(self, val):
         """
         Divide this duration by an integer or float
-        :param val: division factor, ``int/float``
-        :returns: :class:`Duration` divided by val
+        :param val: division factor ``int/float``, or :class:`Duration` to divide by
+        :returns: :class:`Duration` divided by val - a :class:`Duration` if divided by a number, or a number if divided by a duration
         """
         # unlike __floordiv__, this uses true div for float arg.
         # PEP 238
         t = type(val)
         if t in (int, long):
+            warnings.warn(
+                'The Duration.__div__(integer) function is ill-defined. '
+                'The floor operation is applied independently on the seconds as well as the nanoseconds. '
+                'For true division use a float divisor or `from __future__ import division` in Python 2 or `operator.truediv` instead.',
+                category=RuntimeWarning)
             return Duration(self.secs // val, self.nsecs // val)
         elif t == float:
             return Duration.from_sec(self.to_sec() / val)
+        elif isinstance(val, Duration):
+            return self.to_sec() / val.to_sec()
         else:
             return NotImplemented
 
     def __truediv__(self, val):
         """
         Divide this duration by an integer or float
-        :param val: division factor, ``int/float``
-        :returns: :class:`Duration` multiplied by val
+        :param val: division factor ``int/float``, or :class:`Duration` to divide by
+        :returns: :class:`Duration` divided by val - a :class:`Duration` if divided by a number, or a number if divided by a duration
         """
         if type(val) in (int, long, float):
             return Duration.from_sec(self.to_sec() / val)
+        elif isinstance(val, Duration):
+            return self.to_sec() / val.to_sec()
         else:
             return NotImplemented
 
