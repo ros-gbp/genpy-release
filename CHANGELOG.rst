@@ -2,6 +2,16 @@
 Changelog for package genpy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.0 (2016-04-21)
+------------------
+* change semantic of integer division for duration (`#59 <https://github.com/ros/genpy/issues/59>`_)
+
+0.5.9 (2016-04-19)
+------------------
+* warn about using floor division of durations (`#58 <https://github.com/ros/genpy/issues/58>`_)
+* allow durations to be divided by other durations (`#48 <https://github.com/ros/genpy/issues/48>`_)
+* avoid adding newline in msg_generator (`#47 <https://github.com/ros/genpy/issues/47>`_, `#51 <https://github.com/ros/genpy/issues/51>`_)
+
 0.5.8 (2016-03-09)
 ------------------
 
