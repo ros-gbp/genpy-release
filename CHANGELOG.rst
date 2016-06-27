@@ -2,9 +2,9 @@
 Changelog for package genpy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.6.0 (2016-04-21)
-------------------
-* change semantic of integer division for duration (`#59 <https://github.com/ros/genpy/issues/59>`_)
+0.5.10 (2016-06-27)
+-------------------
+* add __ne_\_ magic method (`#62 <https://github.com/ros/genpy/pull/62>`_)
 
 0.5.9 (2016-04-19)
 ------------------
