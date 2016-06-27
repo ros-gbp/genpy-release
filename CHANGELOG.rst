@@ -2,6 +2,10 @@
 Changelog for package genpy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.5.10 (2016-06-27)
+-------------------
+* add __ne_\_ magic method (`#62 <https://github.com/ros/genpy/pull/62>`_)
+
 0.5.9 (2016-04-19)
 ------------------
 * warn about using floor division of durations (`#58 <https://github.com/ros/genpy/issues/58>`_)
