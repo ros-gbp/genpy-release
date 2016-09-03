@@ -2,6 +2,10 @@
 Changelog for package genpy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.2 (2016-09-03)
+------------------
+* fix regression regarding lazy init introduced in 0.6.1 (`#67 <https://github.com/ros/genpy/issues/67>`_)
+
 0.6.1 (2016-09-02)
 ------------------
 * lazy init struct (`#65 <https://github.com/ros/genpy/issues/65>`_)
