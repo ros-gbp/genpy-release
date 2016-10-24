@@ -1,3 +1,26 @@
+## genpy (kinetic) - 0.6.3-0
+
+The packages in the `genpy` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -r kinetic -t kinetic genpy` on `Mon, 24 Oct 2016 18:04:41 -0000`
+
+The `genpy` package was released.
+
+Version of package(s) in repository `genpy`:
+
+- upstream repository: git@github.com:ros/genpy.git
+- release repository: https://github.com/ros-gbp/genpy-release.git
+- rosdistro version: `0.6.2-0`
+- old version: `0.6.2-0`
+- new version: `0.6.3-0`
+
+Versions of tools used:
+
+- bloom version: `0.5.22`
+- catkin_pkg version: `0.2.10`
+- rosdep version: `0.11.5`
+- rosdistro version: `0.4.7`
+- vcstools version: `0.1.39`
+
+
 ## genpy (kinetic) - 0.6.2-0
 
 The packages in the `genpy` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -r kinetic -t kinetic genpy` on `Sat, 03 Sep 2016 20:29:17 -0000`
