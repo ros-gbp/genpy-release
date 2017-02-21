@@ -1,3 +1,26 @@
+## genpy (lunar) - 0.6.3-0
+
+The packages in the `genpy` repository were released into the `lunar` distro by running `/usr/bin/bloom-release -r lunar -t lunar genpy` on `Tue, 21 Feb 2017 19:16:36 -0000`
+
+The `genpy` package was released.
+
+Version of package(s) in repository `genpy`:
+
+- upstream repository: git@github.com:ros/genpy.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `None-0`
+- new version: `0.6.3-0`
+
+Versions of tools used:
+
+- bloom version: `0.5.23`
+- catkin_pkg version: `0.3.1`
+- rosdep version: `0.11.5`
+- rosdistro version: `0.5.0`
+- vcstools version: `0.1.39`
+
+
 ## genpy (kinetic) - 0.6.3-0
 
 The packages in the `genpy` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -r kinetic -t kinetic genpy` on `Mon, 24 Oct 2016 18:04:41 -0000`
