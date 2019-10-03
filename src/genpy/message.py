@@ -212,7 +212,7 @@ def check_type(field_name, field_type, field_val):
             if type(field_val) not in [long, int]:
                 raise SerializationError('field %s must be an integer type'%field_name)
             maxval = int(math.pow(2, _widths[field_type]-1))
-            if field_val >= maxval or field_val <= -maxval:
+            if field_val >= maxval or field_val < -maxval:
                 raise SerializationError('field %s exceeds specified width [%s]'%(field_name, field_type))
         elif field_type in ['char', 'uint8', 'uint16', 'uint32', 'uint64']:
             if type(field_val) not in [long, int] or field_val < 0:
@@ -388,16 +388,11 @@ def get_printable_message_args(msg, buff=None, prefix=''):
     """
     try:
         from cStringIO import StringIO # Python 2.x
-        python3 = 0
     except ImportError:
-        from io import BytesIO # Python 3.x
-        python3 = 1
+        from io import StringIO # Python 3.x
 
     if buff is None:
-        if python3 == 1:
-            buff = BytesIO()
-        else: 
-            buff = StringIO()
+        buff = StringIO()
     for f in msg.__slots__:
         if isinstance(getattr(msg, f), Message):
             get_printable_message_args(getattr(msg, f), buff=buff, prefix=(prefix+f+'.'))
