@@ -517,7 +517,7 @@ def array_serializer_generator(msg_context, package, type_, name, serialize, is_
         if not serialize and base_type == 'bool':
             # convert uint8 to bool
             if base_type == 'bool':
-                yield "%s = map(bool, %s)"%(var, var)
+                yield "%s = list(map(bool, %s))"%(var, var)
 
     else:
         #generic recursive serializer
@@ -743,7 +743,7 @@ def msg_generator(msg_context, spec, search_path):
     try:
         genmsg.msg_loader.load_depends(msg_context, spec, search_path)
     except InvalidMsgSpec as e:
-        raise MsgGenerationException("Cannot generate .msg for %s/%s: %s"%(package, name, str(e)))
+        raise MsgGenerationException("Cannot generate .msg for %s/%s: %s"%(spec.package, spec.short_name, str(e)))
     md5sum = genmsg.compute_md5(msg_context, spec)
 
     # remap spec names to be Python-safe
