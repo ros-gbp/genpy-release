@@ -2,6 +2,14 @@
 Changelog for package genpy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.14 (2020-08-10)
+-------------------
+* create Struct objects to save memory (`#129 <https://github.com/ros/genpy/issues/129>`_)
+
+0.6.13 (2020-07-20)
+-------------------
+* don't raise exceptions on unicode decode error (`#127 <https://github.com/ros/genpy/issues/127>`_)
+
 0.6.12 (2020-05-28)
 -------------------
 * fix check_type for uint8[] to accept bytes (`#123 <https://github.com/ros/genpy/issues/123>`_)
