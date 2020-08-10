@@ -2,6 +2,49 @@
 Changelog for package genpy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.14 (2020-08-10)
+-------------------
+* create Struct objects to save memory (`#129 <https://github.com/ros/genpy/issues/129>`_)
+
+0.6.13 (2020-07-20)
+-------------------
+* don't raise exceptions on unicode decode error (`#127 <https://github.com/ros/genpy/issues/127>`_)
+
+0.6.12 (2020-05-28)
+-------------------
+* fix check_type for uint8[] to accept bytes (`#123 <https://github.com/ros/genpy/issues/123>`_)
+
+0.6.11 (2020-05-12)
+-------------------
+* support non-int integral time parameters (`#121 <https://github.com/ros/genpy/issues/121>`_)
+
+0.6.10 (2020-01-24)
+-------------------
+* various code cleanup (`#117 <https://github.com/ros/genpy/issues/117>`_)
+* update logic for newer PyYAML output for dump() (`#116 <https://github.com/ros/genpy/issues/116>`_)
+* small optimization in dynamic.py (`#109 <https://github.com/ros/genpy/issues/109>`_)
+* use setuptools instead of distutils (`#115 <https://github.com/ros/genpy/issues/115>`_)
+* bump CMake version to avoid CMP0048 warning (`#114 <https://github.com/ros/genpy/issues/114>`_)
+* serialization: always set _x var for correct exception msg (`#113 <https://github.com/ros/genpy/issues/113>`_)
+* sort generated imports to make them reproducible (`#111 <https://github.com/ros/genpy/issues/111>`_)
+* make the generated "struct" constructs reproducible (`#110 <https://github.com/ros/genpy/issues/110>`_)
+
+0.6.9 (2019-10-03)
+------------------
+* fix Python 3 buffer handling (`#106 <https://github.com/ros/genpy/issues/106>`_)
+* Python 3 compatibility (`#104 <https://github.com/ros/genpy/issues/104>`_)
+* fix usage of undefined variables in exception (`#105 <https://github.com/ros/genpy/issues/105>`_)
+* convert map iterator to list (`#103 <https://github.com/ros/genpy/issues/103>`_)
+* fix negative limit check for signed ints (`#102 <https://github.com/ros/genpy/issues/102>`_)
+* failing test case for UTF-8 encoded characters in comments (`#95 <https://github.com/ros/genpy/issues/95>`_)
+
+0.6.8 (2019-03-04)
+------------------
+* check size of fixed sized arrays when serializing (`#92 <https://github.com/ros/genpy/issues/92>`_)
+* allow returning derived types in overloaded operators (`#100 <https://github.com/ros/genpy/issues/100>`_)
+* reload() was move into importlib in Python 3 (`#98 <https://github.com/ros/genpy/issues/98>`_)
+* fix _convert_getattr for handling uint8[] message fields in Python 3 (`#96 <https://github.com/ros/genpy/issues/96>`_)
+
 0.6.7 (2017-10-26)
 ------------------
 * use errno to detect existing dir (`#89 <https://github.com/ros/genpy/issues/89>`_)
