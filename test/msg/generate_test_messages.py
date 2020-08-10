@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import os
 import sys
 
@@ -38,6 +36,7 @@ def generate_test_messages(msg_files):
         except SystemExit as e:
             if e.code:
                 raise
+
 
 if __name__ == '__main__':
     generate_test_messages(sys.argv[1:])
