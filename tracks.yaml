@@ -172,15 +172,17 @@ tracks:
     - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
       -i :{release_inc} --os-name debian --os-not-required
     - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
-      :{release_inc}
-    devel_branch: kinetic-devel
+      :{release_inc} --os-name fedora
+    - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
+      :{release_inc} --os-name rhel
+    devel_branch: main
     last_version: 0.6.14
     name: upstream
     patches: null
     release_inc: '1'
-    release_repo_url: null
+    release_repo_url: git@github.com:ros-gbp/genpy-release.git
     release_tag: :{version}
     ros_distro: noetic
     vcs_type: git
-    vcs_uri: git@github.com:ros/genpy.git
+    vcs_uri: https://github.com/ros/genpy.git
     version: :{auto}
