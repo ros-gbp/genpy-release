@@ -57,34 +57,41 @@ try:
 except NameError:  # Python 3
     from importlib import reload
 
-# common struct pattern singletons for msgs to use. Although this
-# would better placed in a generator-specific module, we don't want to
-# add another import to messages (which incurs higher import cost)
-
 if sys.version > '3':
     long = int
 
+try:
+    import numpy as np
+    _valid_float_types = [float, int, long, np.float32, np.float64, np.int8, np.int16, np.int32, np.int64, np.uint8,
+                          np.uint16, np.uint32, np.uint64]
+except ImportError:
+    _valid_float_types = [float, int, long]
+
+# common struct pattern singletons for msgs to use. Although this
+# would better placed in a generator-specific module, we don't want to
+# add another import to messages (which incurs higher import cost)
 struct_I = struct.Struct('<I')
 
 _warned_decoding_error = set()
 
-# Notify the user while not crashing in the face of errors attempting
-# to decode non-unicode data within a ROS message.
-class RosMsgUnicodeErrors:
-    def __init__(self):
-        self.msg_type = None
+if sys.hexversion >= 0x03000000:
+    # Notify the user while not crashing in the face of errors attempting
+    # to decode non-unicode data within a ROS message.
+    class RosMsgUnicodeErrors:
+        def __init__(self):
+            self.msg_type = None
 
-    def __call__(self, err):
-        global _warned_decoding_error
-        if self.msg_type not in _warned_decoding_error:
-            _warned_decoding_error.add(self.msg_type)
-            # Lazy import to avoid this cost in the non-error case.
-            import logging
-            logger = logging.getLogger('rosout')
-            extra = "message %s" % self.msg_type if self.msg_type else "unknown message"
-            logger.error("Characters replaced when decoding %s (will print only once): %s", extra, err)
-        return codecs.replace_errors(err)
-codecs.register_error('rosmsg', RosMsgUnicodeErrors())
+        def __call__(self, err):
+            global _warned_decoding_error
+            if self.msg_type not in _warned_decoding_error:
+                _warned_decoding_error.add(self.msg_type)
+                # Lazy import to avoid this cost in the non-error case.
+                import logging
+                logger = logging.getLogger('rosout')
+                extra = "message %s" % self.msg_type if self.msg_type else "unknown message"
+                logger.error("Characters replaced when decoding %s (will print only once): %s", extra, err)
+            return codecs.replace_errors(err)
+    codecs.register_error('rosmsg', RosMsgUnicodeErrors())
 
 
 def isstring(s):
@@ -261,6 +268,9 @@ def check_type(field_name, field_type, field_val):
             maxval = int(math.pow(2, _widths[field_type]))
             if field_val >= maxval:
                 raise SerializationError('field %s exceeds specified width [%s]' % (field_name, field_type))
+        elif field_type in ['float32', 'float64']:
+            if type(field_val) not in _valid_float_types:
+                raise SerializationError('field %s must be float type' % field_name)
         elif field_type == 'bool':
             if field_val not in [True, False, 0, 1]:
                 raise SerializationError('field %s is not a bool' % (field_name))
