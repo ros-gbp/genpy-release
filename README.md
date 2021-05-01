@@ -1,3 +1,26 @@
+## genpy (melodic) - 0.6.16-1
+
+The packages in the `genpy` repository were released into the `melodic` distro by running `/usr/bin/bloom-release --rosdistro melodic --track melodic genpy` on `Sat, 01 May 2021 16:48:35 -0000`
+
+The `genpy` package was released.
+
+Version of package(s) in repository `genpy`:
+
+- upstream repository: https://github.com/ros/genpy.git
+- release repository: https://github.com/ros-gbp/genpy-release.git
+- rosdistro version: `0.6.15-1`
+- old version: `0.6.15-1`
+- new version: `0.6.16-1`
+
+Versions of tools used:
+
+- bloom version: `0.10.3`
+- catkin_pkg version: `0.4.23`
+- rosdep version: `0.20.0`
+- rosdistro version: `0.8.3`
+- vcstools version: `0.1.42`
+
+
 ## genpy (noetic) - 0.6.15-1
 
 The packages in the `genpy` repository were released into the `noetic` distro by running `/home/osrf/.local/bin/bloom-release --edit-track -r noetic -t noetic --override-release-repository-push-url git@github.com:ros-gbp/genpy-release.git genpy` on `Tue, 13 Apr 2021 01:45:50 -0000`
