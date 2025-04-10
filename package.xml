@@ -4,10 +4,9 @@
   schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>genpy</name>
-  <version>0.6.16</version>
+  <version>0.6.17</version>
   <description>Python ROS message and service generators.</description>
-  <maintainer email="mabel@openrobotics.org">Mabel Zhang</maintainer>
-  <maintainer email="sloretz@openrobotics.org">Shane Loretz</maintainer>
+  <maintainer email="geoff@openrobotics.org">Geoffrey Biggs</maintainer>
   <license>BSD</license>
 
   <url type="website">http://wiki.ros.org/genpy</url>
@@ -18,6 +17,8 @@
   <author>Troy Straszheim</author>
   <author>Morten Kjaergaard</author>
   <author>Dirk Thomas</author>
+  <author email="mabel@openrobotics.org">Mabel Zhang</author>
+  <author email="sloretz@openrobotics.org">Shane Loretz</author>
 
   <depend>genmsg</depend>
 
