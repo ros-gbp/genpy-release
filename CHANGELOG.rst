@@ -2,6 +2,12 @@
 Changelog for package genpy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.18 (2025-04-25)
+-------------------
+* Use yaml.safe_load in test (`#150 <https://github.com/ros/genpy/issues/150>`_)
+* Replaced deprecated unit test aliases `#145 <https://github.com/ros/genpy/issues/145>`_ (`#156 <https://github.com/ros/genpy/issues/156>`_)
+* Contributors: Atsushi Watanabe, Tanveer Brar
+
 0.6.17 (2025-04-10)
 -------------------
 * Fix bug in reduce_pattern (`#152 <https://github.com/ros/genpy/issues/152>`_)
